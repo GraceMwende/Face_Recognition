@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+ <h1 class="text-center">Mark attendance</h1>
+ <p>By clicking the button below you will be marked present!</p>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <button type="submit">Submit</button>
+
+    {% if status == 2 %}
+    <p>Sorry,You cannot mark attendance twice in a day</p>
+    {% endif %}
+
+    {% if status == 3 %}
+    <p>Your account has been created successfully</p>
+    {% endif %}
+
+    {% if status == 0 %}
+    <p>You have to login first!</p>
+    <a href="/accounts/login">LOGIN</a>
+    <a href="/accounts/register/">Register</a>
+    {% endif %}
+
+  </form>
+  
+{% endblock%}
