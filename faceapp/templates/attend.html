@@ -1,28 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
 
- <h1 class="text-center heading">Mark attendance</h1>
- <div class="container">
-  <p class="w-message">By clicking the button below you will be marked present!</p>
-
-  <form action="" method="POST">
-    {% csrf_token %}
-    <button type="submit"class="b-attend">ATTEND</button>
-  </form>
-
-    {% if status == 2 %}
-    <p class="text-danger">Sorry,You cannot mark attendance twice in a day</p>
-    {% endif %}
-
-    {% if status == 3 %}
-    <p class="text-success">Your account has been created successfully</p>
-    {% endif %}
-
-    {% if status == 0 %}
-    <p class="text-danger">You have to login first!</p>
-    <a href="/accounts/login">LOGIN</a>
-    <a href="/accounts/register/">Register</a>
-    {% endif %}
+ <div class="bg">
+  <h1 class="text-center heading">Attendance Facial Recognition System</h1>
+  <div class="container">
+   <p class="w-message">By clicking the button below you will be marked present!</p>
+ 
+   <form action="" method="POST">
+     {% csrf_token %}
+     <button type="submit"class="b-attend">CHECK IN</button>
+   </form>
+ 
+     {% if status == 2 %}
+     <p class="text-danger">Sorry,You cannot mark attendance twice in a day</p>
+     {% endif %}
+ 
+     {% if status == 3 %}
+     <p class="text-success">Your account has been created successfully</p>
+     {% endif %}
+ 
+     {% if status == 0 %}
+     <p class="text-danger">You have to login first!</p>
+     <a href="/accounts/login">LOGIN</a>
+     <a href="/accounts/register/">Register</a>
+     {% endif %}
+  </div>
  </div>
   
 {% endblock%}
