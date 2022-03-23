@@ -1,0 +1,25 @@
+.heading {
+  color: lightseagreen;
+  font-size: 50px;
+}
+
+.container {
+  margin: 0px 100px;
+}
+
+.w-message {
+  font-size: 30px;
+  color: seagreen;
+}
+
+.b-attend {
+  transition-duration: 1s;
+  background-color: mediumseagreen;
+  color: mintcream;
+  font-size: 30px;
+}
+
+.b-attend:hover {
+  background-color: darkturquoise;
+  transition-duration: 2s;
+}
