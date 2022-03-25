@@ -8,7 +8,8 @@
  
    <form action="" method="POST">
      {% csrf_token %}
-     <button type="submit"class="b-attend">CHECK IN</button>
+     <button type="submit" class="rounded-pill btn btn-outline-success">CHECK IN <i class="fa-solid fa-check-to-slot"></i>
+     </button>
    </form>
  
      {% if status == 2 %}

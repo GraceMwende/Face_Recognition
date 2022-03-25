@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="col-lg-12 bbg" >
+        <div class="col-sm-12">
+
+            <h1 class="text-center text-white" style="margin-bottom:2em">Attendance System Using Face Recognition.</h1>
+        </div>
+
+        <div class="col-lg-12" >
+            {% if messages %} {% for message in messages%}
+            <div class="alert alert-{{message.tags}}"> {{message}}
+            </div>
+            {%endfor %} {%endif%}
+        </div>
+<div class="row">
+<p class="text-white">{{user.username}}</p>
+</div>
+
+        <div class="row">
+
+
+            <div class="col-md-4">
+                <a href=''><img src="{% static 'images/enter.jpg' %}" class="img-responsive rounded-circle" style="width:300px;height:300px ;" /></a>
+
+            </div>
+
+            <div class="col-md-4">
+                <a href=''><img src="{% static 'images/checkout.jpg' %}" class="img-responsive rounded-circle" style="width:300px;height:300px ;" /></a>
+
+            </div>
+
+            <div class="col-md-4">
+                <a href='/accounts/login'><img src="{% static 'images/login.jpg' %}" class="img-responsive rounded-circle" style="width:300px;height:300px" /></a>
+
+
+            </div>
+
+
+
+        </div>
+        <div class="row">
+
+
+            <div class="col md-3">
+                <h4 class="text-center text-white h1 ">Check- In</h4>
+            </div>
+            <div class="col md-3">
+                <h4 class="text-center text-white h1 ">Check - Out </h4>
+            </div>
+    
+
+            <div class="col md-3">
+                <h4 class="text-center text-white h1 ">Log In </h4>
+            </div>
+            ]
+
+        </div>
+
+    </div>
+    {% endblock %}
+
+
+
+
+
+
+

@@ -1,6 +1,20 @@
 from django.shortcuts import render
 from .models import Attend
 from django.utils import timezone
+from django.contrib import messages
+
+def home(request):
+  return render(request,'home.html')
+
+def dashboard(request):
+  if(request.user.username == 'admin'):
+    print('admin')
+    return render (request, 'admin.html')
+
+  else:
+    print('not admin')
+    messages.error(request,'You are not an admin')
+    return render(request, 'staff.html')
 
 
 # Create your views here.
