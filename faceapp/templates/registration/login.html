@@ -1,45 +1,62 @@
-{% extends 'registration/base.html' %}
+{% load static %}
 {% load bootstrap5 %}
-{% block content %}
-  <div class="container">
-      <div class="row">
-        <!-- Empty div -->
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            {% if form.errors %}
-              <p>Some information might be incorrect</p>
-            {% endif %}
+<!DOCTYPE html>
+<html>
+<head>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="text-center">Sign In</h3>
-                </div>
-                <div class="panel-body">
-                    <form action="/accounts/login/" method="post">
-                        {% csrf_token %}
-                        {% bootstrap_form form %}
-                        <div class="form-group">
-                          <input type="submit" class="btn btn-primary btn-sm" value="Login  ">
-                        </div>
+	  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-                        <input type="hidden" name="next" value="{{next}}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-                    </form>
-                </div>
-            </div>
+   <style>
+    body{
+      background: url('{% static "images/default_bg.jpg"%}') no-repeat center center fixed;
+      background-size: cover;
+      
+    }
+   
+   </style>
 
-            <div class="card-footer text-center">
-              <div class="small">
-                  <a href="/accounts/register/">Don't have an account yet? Go to signup</a><br>
-                  <a href="#"><i>Forgot Password?</i></a>
-              </div>
-          </div>
-          
-        </div>
 
-        <!-- Empty div -->
-        <div class="col-md-4"></div>
+	
+</head>
+<body>
+<div class="col-lg-12" style="background: rgba(0,0,0,0.6);max-height: 20px ;color:#fff;border-radius:10px;-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+-moz-box-shadow:    2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7); margin-left:auto; margin-right: auto; ">
 
-      </div>  
-  </div>
-{% endblock %}
+</div>
+
+ <div class="col-lg-4" style="background: rgba(0,0,0,0.6);margin-top:50px ; padding-top:1em;padding-bottom:3em;color:#fff;border-radius:10px;-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+-moz-box-shadow:    2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7); margin-left:auto; margin-right: auto; ">
+
+ <form method="POST" >
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> Sign In Page</legend>
+        {% bootstrap_form form%}
+      
+      </fieldset>
+
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit"> Sign</button>
+      </div>
+    </form>
+
+</div>
+
+
+
+
+
+  <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+  </html>

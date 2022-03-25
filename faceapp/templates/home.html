@@ -14,14 +14,14 @@
             {%endfor %} {%endif%}
         </div>
 <div class="row">
-<p class="text-white">{{user.username}}</p>
+<!-- <p class="text-white">{{user.username}}</p> -->
 </div>
 
         <div class="row">
 
 
             <div class="col-md-4">
-                <a href=''><img src="{% static 'images/enter.jpg' %}" class="img-responsive rounded-circle" style="width:300px;height:300px ;" /></a>
+                <a href='{% url "mark_attendance" %}'><img src="{% static 'images/enter.jpg' %}" class="img-responsive rounded-circle" style="width:300px;height:300px ;" /></a>
 
             </div>
 
