@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 
-path = 'training_images'
+path = 'media/training_images'
 images = []
 personNames = []
 myList = os.listdir(path)

@@ -8,3 +8,7 @@ class Attend(models.Model):
 
   def __str__(self):
     return str(str(self.attender.username)+ " " + str(self.datetime)[:19])
+
+class Face(models.Model):
+  images = models.ImageField(upload_to='training_images')
+

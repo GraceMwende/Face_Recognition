@@ -80,7 +80,13 @@ box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);">
     </style>
 
 
+{% if messages %}
+{% for message in messages%}
+<div class="alert alert-{{message.tags}}" > {{message}}
+</div>
+{%endfor %}
 
+{%endif%}
 
 
       <div class="row">
@@ -92,7 +98,7 @@ box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);">
           
         </div>
         <div class="col-md-4">
-          <a href=""><img src="{% static 'images/add.jpg' %}" class="img-responsive" style="width:300px;height:300px"/></a> 
+          <a href="{% url 'image_upload' %}"><img src="{% static 'images/add.jpg' %}" class="img-responsive" style="width:300px;height:300px"/></a> 
         </div>
         <div class="col-md-4">
           <a href=""><img src="{% static 'images/reports.jpg' %}" class="img-responsive" style="width:300px;height:300px"/></a>
@@ -123,13 +129,7 @@ box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);">
 
 </div>
 
- {% if messages %}
-      {% for message in messages%}
-      <div class="alert alert-{{message.tags}}" > {{message}}
-      </div>
-      {%endfor %}
 
-    {%endif%}
 
 
 </div>

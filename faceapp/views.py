@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import Attend
 from django.utils import timezone
 from django.contrib import messages
+from .forms import NewPhotoForm
+from django.http import HttpResponse
 
 def home(request):
   return render(request,'home.html')
@@ -16,6 +18,22 @@ def dashboard(request):
     messages.error(request,'You are not an admin')
     return render(request, 'staff.html')
 
+def upload_photos(request):
+  if request.method == 'POST':
+      form = NewPhotoForm(request.POST, request.FILES)
+      if form.is_valid():
+          form.save()
+      messages.success(request, 'Image successfully uploaded')
+      return redirect('dashboard')
+
+  else:
+      form = NewPhotoForm()
+  return render(request, 'new_photo.html', {"form": form})
+
+
+  
+  
+  
 
 # Create your views here.
 def attend_view(request):
