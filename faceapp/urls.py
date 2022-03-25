@@ -8,7 +8,7 @@ urlpatterns = [
   path('attend/',views.attend_view, name='attend_view'),
   path('dashboard/',views.dashboard, name='dashboard'),
   path('image_upload', views.upload_photos, name = 'image_upload'),
-  # path('success', views.success, name = 'success'),
+  path('create_user', views.create_user, name = 'create_user'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

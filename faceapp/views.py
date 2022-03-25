@@ -4,6 +4,8 @@ from django.utils import timezone
 from django.contrib import messages
 from .forms import NewPhotoForm
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
+
 
 def home(request):
   return render(request,'home.html')
@@ -30,8 +32,18 @@ def upload_photos(request):
       form = NewPhotoForm()
   return render(request, 'new_photo.html', {"form": form})
 
+def create_user(request):
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      messages.success(request, f'Staff registered successfully!')
+      return redirect('dashboard')
 
-  
+  else:
+    form = UserCreationForm()
+
+  return render(request, 'admin-register.html',{'form':form})
   
   
 
