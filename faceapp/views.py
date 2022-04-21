@@ -50,6 +50,10 @@ def create_user(request):
     form = UserCreationForm()
 
   return render(request, 'admin-register.html',{'form':form})
+
+def generate_reports(request):
+  attendes = Attend.objects.all()
+  return render(request, 'admin-reports.html',{'attendes':attendes})
   
 def face_attend_view(request):
   path = 'media/training_images'
